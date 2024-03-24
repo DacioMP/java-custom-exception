@@ -16,7 +16,7 @@ public class Reservation {
 	
 	public Reservation() {}
 
-	public Reservation(Integer roomNumber, LocalDate checkin, LocalDate checkout) throws DomainException {
+	public Reservation(Integer roomNumber, LocalDate checkin, LocalDate checkout) {
 		
 		if (!checkout.isAfter(checkin)) {
 			throw new DomainException("Check-out date must be after check-in date");
@@ -50,7 +50,7 @@ public class Reservation {
 		return diff.toDays();
 	}
 	
-	public void updateDates(LocalDate checkin, LocalDate checkout) throws DomainException {
+	public void updateDates(LocalDate checkin, LocalDate checkout) {
 		
 		LocalDate now = LocalDate.now();
 		
